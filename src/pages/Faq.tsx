@@ -28,7 +28,7 @@ export default function FaqPage() {
   return (
     <div className="max-w-3xl mx-auto px-4 sm:px-6 py-12">
       <p className="text-xs tracking-[0.3em] uppercase text-rose-300/80">Lantern notes</p>
-      <h1 className="font-display text-4xl mt-2">Questions from the lane</h1>
+      <h1 className="font-display text-3xl sm:text-4xl mt-2">Questions from the lane</h1>
       {error && <p className="text-rose-300 mt-4">{error}</p>}
       {loading ? (
         <div className="mt-8 space-y-3">

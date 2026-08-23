@@ -80,7 +80,7 @@ export default function Shop() {
   return (
     <div className="max-w-7xl mx-auto px-4 sm:px-6 py-10">
       <p className="text-xs tracking-[0.3em] uppercase text-rose-300/80">The bazaar</p>
-      <h1 className="font-display text-4xl sm:text-5xl mt-2">Every stall, open tonight</h1>
+      <h1 className="font-display text-3xl sm:text-5xl mt-2">Every stall, open tonight</h1>
       <p className="text-stone-400 mt-3 max-w-2xl">Filter by house, months or budget. Prices are per remaining seat, not per whole family plan.</p>
 
       <div className="mt-8 flex flex-col lg:flex-row gap-8">

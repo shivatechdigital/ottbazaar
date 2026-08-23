@@ -30,7 +30,7 @@ export default function Orders() {
 
   return (
     <div className="max-w-5xl mx-auto px-4 sm:px-6 py-10">
-      <h1 className="font-display text-4xl">Your passes</h1>
+      <h1 className="font-display text-3xl sm:text-4xl">Your passes</h1>
       {justOrdered && (
         <div className="mt-4 rounded-2xl border border-emerald-400/30 bg-emerald-950/40 px-4 py-3 text-sm text-emerald-100">
           Order #{justOrdered} is confirmed. The seller will share invite details shortly.

@@ -62,7 +62,7 @@ export default function Dashboard() {
       <div className="flex flex-wrap items-end justify-between gap-4">
         <div>
           <p className="text-xs tracking-[0.3em] uppercase text-rose-300/80">Seller desk</p>
-          <h1 className="font-display text-4xl mt-2">Your stall</h1>
+          <h1 className="font-display text-3xl sm:text-4xl mt-2">Your stall</h1>
         </div>
         <Link to="/sell" className="px-5 py-2.5 rounded-full bg-amber-400 text-[#1a1208] font-medium">New listing</Link>
       </div>

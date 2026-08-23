@@ -70,7 +70,7 @@ export default function Cart() {
 
   return (
     <div className="max-w-5xl mx-auto px-4 sm:px-6 py-10">
-      <h1 className="font-display text-4xl">Your thaili</h1>
+      <h1 className="font-display text-3xl sm:text-4xl">Your thaili</h1>
       <p className="text-stone-400 mt-2">Services you selected for WhatsApp checkout.</p>
       {error && <p className="text-rose-300 mt-4">{error}</p>}
 

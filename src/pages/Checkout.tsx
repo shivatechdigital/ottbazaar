@@ -95,7 +95,7 @@ export default function Checkout() {
 
   return (
     <div className="max-w-5xl mx-auto px-4 sm:px-6 py-10">
-      <h1 className="font-display text-4xl">Kiosk checkout</h1>
+      <h1 className="font-display text-3xl sm:text-4xl">Kiosk checkout</h1>
       <form onSubmit={place} className="mt-8 grid lg:grid-cols-[1fr_300px] gap-8">
         <div className="space-y-4 rounded-3xl border border-white/8 bg-[#14101c] p-6">
           {error && <p className="text-rose-300 text-sm">{error}</p>}
@@ -130,7 +130,7 @@ export default function Checkout() {
           </label>
           <div>
             <p className="text-sm mb-2">Pay with</p>
-            <div className="grid grid-cols-3 gap-2">
+            <div className="grid grid-cols-1 sm:grid-cols-3 gap-2">
               {['UPI', 'Card', 'Netbanking'].map((m) => (
                 <button
                   type="button"

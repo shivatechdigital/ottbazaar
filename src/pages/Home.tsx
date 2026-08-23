@@ -58,7 +58,7 @@ export default function Home() {
 
   return (
     <div>
-      <section className="relative min-h-[88vh] flex items-center overflow-hidden">
+      <section className="relative min-h-[80vh] sm:min-h-[88vh] flex items-center overflow-hidden">
         <video
           className="absolute inset-0 w-full h-full object-cover"
           src="/videos/hero-cinema.mp4"
@@ -73,7 +73,7 @@ export default function Home() {
           <motion.p
             initial={{ opacity: 0, y: 12 }}
             animate={{ opacity: 1, y: 0 }}
-            className="text-xs tracking-[0.4em] uppercase text-amber-300/90 mb-5"
+            className="text-xs tracking-[0.25em] sm:tracking-[0.4em] uppercase text-amber-300/90 mb-5"
           >
             India&apos;s OTT bazaar
           </motion.p>
@@ -81,13 +81,13 @@ export default function Home() {
             initial={{ opacity: 0, y: 18 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.08 }}
-            className="font-display text-5xl sm:text-7xl leading-[0.92] max-w-3xl"
+            className="font-display text-4xl sm:text-6xl lg:text-7xl leading-[0.96] sm:leading-[0.92] max-w-3xl"
           >
             Share seats.
             <br />
             <span className="text-amber-300">Stream richer.</span>
           </motion.h1>
-          <p className="mt-6 max-w-xl text-stone-300 text-lg leading-relaxed">
+          <p className="mt-6 max-w-xl text-stone-300 text-base sm:text-lg leading-relaxed">
             Unused Netflix, Hotstar, Prime and Spotify slots find new homes here. Honest prices, verified sellers, instant checkout.
           </p>
           <div className="mt-8 flex flex-wrap gap-3">
@@ -124,10 +124,10 @@ export default function Home() {
       </section>
 
       <section className="max-w-7xl mx-auto px-4 sm:px-6 mt-20">
-        <div className="flex items-end justify-between mb-8">
+        <div className="flex flex-col sm:flex-row sm:items-end sm:justify-between gap-3 mb-8">
           <div>
             <p className="text-xs tracking-[0.3em] uppercase text-rose-300/80">Aisles</p>
-            <h2 className="font-display text-4xl mt-2">Featured platforms</h2>
+            <h2 className="font-display text-3xl sm:text-4xl mt-2">Featured platforms</h2>
           </div>
           <Link to="/shop" className="text-sm text-amber-300 hover:text-amber-200">View all</Link>
         </div>
@@ -158,10 +158,10 @@ export default function Home() {
       </section>
 
       <section className="max-w-7xl mx-auto px-4 sm:px-6 mt-20">
-        <div className="flex items-end justify-between mb-8">
+        <div className="flex flex-col sm:flex-row sm:items-end sm:justify-between gap-3 mb-8">
           <div>
             <p className="text-xs tracking-[0.3em] uppercase text-rose-300/80">Tonight&apos;s stalls</p>
-            <h2 className="font-display text-4xl mt-2">Trending deals</h2>
+            <h2 className="font-display text-3xl sm:text-4xl mt-2">Trending deals</h2>
           </div>
         </div>
         {loading ? (
@@ -184,7 +184,7 @@ export default function Home() {
         <div className="absolute inset-0 bg-[#07040d]/80" />
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 py-20">
           <p className="text-xs tracking-[0.3em] uppercase text-amber-300/80">How the bazaar works</p>
-          <h2 className="font-display text-4xl mt-2 mb-12">Three lanterns, then you stream</h2>
+          <h2 className="font-display text-3xl sm:text-4xl mt-2 mb-10 sm:mb-12">Three lanterns, then you stream</h2>
           <div className="grid md:grid-cols-3 gap-8">
             {[
               { n: '01', t: 'Pick a stall', d: 'Filter by platform, months and budget. Every listing shows remaining seats.' },
@@ -202,7 +202,7 @@ export default function Home() {
       </section>
 
       <section className="max-w-7xl mx-auto px-4 sm:px-6 mt-20">
-        <h2 className="font-display text-4xl mb-8">Voices from the lane</h2>
+        <h2 className="font-display text-3xl sm:text-4xl mb-8">Voices from the lane</h2>
         <div className="grid md:grid-cols-3 gap-5">
           {stories.map((s) => (
             <blockquote key={s.id} className="rounded-3xl border border-white/8 bg-[#14101c] p-6">
@@ -217,10 +217,10 @@ export default function Home() {
       </section>
 
       <section className="max-w-7xl mx-auto px-4 sm:px-6 mt-20 grid lg:grid-cols-2 gap-8 items-center">
-        <img src="/images/popcorn.jpg" alt="Movie night" className="rounded-[2rem] h-[380px] w-full object-cover" />
+        <img src="/images/popcorn.jpg" alt="Movie night" className="rounded-[2rem] h-64 sm:h-[380px] w-full object-cover" />
         <div>
           <p className="text-xs tracking-[0.3em] uppercase text-rose-300/80">For hosts</p>
-          <h2 className="font-display text-4xl mt-2">Turn empty family seats into chai money</h2>
+          <h2 className="font-display text-3xl sm:text-4xl mt-2">Turn empty family seats into chai money</h2>
           <p className="text-stone-400 mt-4 leading-relaxed">
             If your Premium plan has two idle profiles, list them in under a minute. Set your price, pick duration, and we handle checkout.
           </p>

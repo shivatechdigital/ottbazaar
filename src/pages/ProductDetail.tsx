@@ -149,7 +149,7 @@ export default function ProductDetail() {
         <Link to="/shop" className="hover:text-amber-200">Shop</Link> / {product.platform_name}
       </p>
       <div className="grid lg:grid-cols-2 gap-10">
-        <div className="relative rounded-[2rem] overflow-hidden h-[420px]">
+        <div className="relative rounded-[2rem] overflow-hidden h-[280px] sm:h-[420px]">
           <img src={product.image_url} alt={product.title} className="w-full h-full object-cover" />
           <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent" />
         </div>
@@ -157,7 +157,7 @@ export default function ProductDetail() {
           <span className="text-xs px-3 py-1 rounded-full text-white" style={{ background: product.platform_color }}>
             {product.platform_name}
           </span>
-          <h1 className="font-display text-4xl mt-4">{product.title}</h1>
+          <h1 className="font-display text-3xl sm:text-4xl mt-4">{product.title}</h1>
           <p className="text-stone-400 mt-2">
             Hosted by {product.seller_name} · {product.plan_type} · {durationLabel(product.duration_months)}
           </p>
@@ -165,7 +165,7 @@ export default function ProductDetail() {
             <Star className="h-4 w-4 fill-current" /> {avg ? avg.toFixed(1) : 'New'} · {reviews.length} reviews
           </div>
           <div className="mt-6 flex items-end gap-3">
-            <span className="text-4xl text-amber-200 font-semibold">{formatINR(product.price)}</span>
+            <span className="text-3xl sm:text-4xl text-amber-200 font-semibold">{formatINR(product.price)}</span>
             {off > 0 && (
               <>
                 <span className="text-stone-500 line-through">{formatINR(product.original_price)}</span>

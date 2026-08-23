@@ -74,12 +74,12 @@ export default function Navbar() {
 
   return (
     <header className="sticky top-0 z-50 border-b border-white/8 bg-[#0a0612]/80 backdrop-blur-xl">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 h-[72px] flex items-center gap-4">
+      <div className="max-w-7xl mx-auto px-3 sm:px-6 h-[64px] sm:h-[72px] flex items-center gap-3 sm:gap-4">
         <Link to="/" className="flex items-center gap-2 shrink-0">
-          <img src="/images/logo-mark.png" alt="OttBazaar" className="h-10 w-10 object-contain" />
-          <div className="leading-none">
-            <div className="font-display text-[18px] tracking-[0.14em] text-amber-200">OTTBAZAAR</div>
-            <div className="text-[10px] tracking-[0.28em] text-rose-300/80 uppercase">Stream Market</div>
+          <img src="/images/logo-mark.png" alt="OttBazaar" className="h-9 w-9 sm:h-10 sm:w-10 object-contain" />
+          <div className="leading-none hidden sm:block">
+            <div className="font-display text-[16px] sm:text-[18px] tracking-[0.12em] sm:tracking-[0.14em] text-amber-200">OTTBAZAAR</div>
+            <div className="text-[10px] tracking-[0.24em] text-rose-300/80 uppercase">Stream Market</div>
           </div>
         </Link>
 
@@ -163,7 +163,7 @@ export default function Navbar() {
             </Link>
           )}
 
-          <button className="lg:hidden p-2 text-stone-200" onClick={() => setOpen((v) => !v)}>
+          <button className="lg:hidden p-2 text-stone-200" onClick={() => setOpen((v) => !v)} aria-label="Toggle menu">
             {open ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
           </button>
         </div>

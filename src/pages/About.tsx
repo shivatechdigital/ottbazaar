@@ -1,12 +1,12 @@
 export default function About() {
   return (
     <div>
-      <section className="relative h-[52vh] min-h-[360px] overflow-hidden">
+      <section className="relative h-[46vh] sm:h-[52vh] min-h-[300px] sm:min-h-[360px] overflow-hidden">
         <img src="/images/about-team.jpg" alt="People streaming together" className="w-full h-full object-cover" />
         <div className="absolute inset-0 bg-gradient-to-t from-[#07040d] via-[#07040d]/50 to-black/20" />
         <div className="absolute inset-0 max-w-5xl mx-auto px-4 flex flex-col justify-end pb-12">
-          <p className="text-xs tracking-[0.3em] uppercase text-amber-300/90">Our story</p>
-          <h1 className="font-display text-5xl mt-2">A lane for leftover seats</h1>
+          <p className="text-xs tracking-[0.22em] sm:tracking-[0.3em] uppercase text-amber-300/90">Our story</p>
+          <h1 className="font-display text-3xl sm:text-5xl mt-2">A lane for leftover seats</h1>
         </div>
       </section>
       <section className="max-w-3xl mx-auto px-4 sm:px-6 py-16 space-y-6 text-stone-300 leading-relaxed">
@@ -36,8 +36,8 @@ export default function About() {
         ))}
       </section>
       <section className="max-w-6xl mx-auto px-4 sm:px-6 grid md:grid-cols-2 gap-6 pb-20">
-        <img src="/images/watch-night.jpg" alt="" className="rounded-[2rem] h-72 w-full object-cover" />
-        <img src="/images/music-stream.jpg" alt="" className="rounded-[2rem] h-72 w-full object-cover" />
+        <img src="/images/watch-night.jpg" alt="" className="rounded-[2rem] h-56 sm:h-72 w-full object-cover" />
+        <img src="/images/music-stream.jpg" alt="" className="rounded-[2rem] h-56 sm:h-72 w-full object-cover" />
       </section>
     </div>
   );

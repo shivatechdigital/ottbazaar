@@ -49,13 +49,13 @@ export default function Login() {
         <img src="/images/hero-bazaar.jpg" alt="" className="absolute inset-0 w-full h-full object-cover" />
         <div className="absolute inset-0 bg-[#07040d]/50" />
         <div className="absolute bottom-10 left-10 right-10">
-          <p className="font-display text-4xl">Step into the night bazaar.</p>
+          <p className="font-display text-3xl xl:text-4xl">Step into the night bazaar.</p>
         </div>
       </div>
       <div className="flex items-center justify-center px-6 py-16">
         <div className="w-full max-w-md">
           <p className="text-xs tracking-[0.3em] uppercase text-amber-300/80">Member gate</p>
-          <h1 className="font-display text-4xl mt-2">{isSignUp ? 'Create a pass' : 'Welcome back'}</h1>
+          <h1 className="font-display text-3xl sm:text-4xl mt-2">{isSignUp ? 'Create a pass' : 'Welcome back'}</h1>
           <p className="text-sm text-stone-500 mt-3">Demo: demo@ottbazaar.in / password123</p>
           <form onSubmit={handleEmailAuth} className="mt-8 space-y-4">
             {error && <p className="text-rose-300 text-sm">{error}</p>}

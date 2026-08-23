@@ -39,7 +39,7 @@ export default function Contact() {
     <div className="max-w-5xl mx-auto px-4 sm:px-6 py-12 grid lg:grid-cols-2 gap-10">
       <div>
         <p className="text-xs tracking-[0.3em] uppercase text-rose-300/80">Kiosk desk</p>
-        <h1 className="font-display text-4xl mt-2">Write to the bazaar</h1>
+        <h1 className="font-display text-3xl sm:text-4xl mt-2">Write to the bazaar</h1>
         <p className="text-stone-400 mt-4 leading-relaxed">
           Disputes, listing help, press — drop a note. We sit in Bandra and answer within one working day.
         </p>

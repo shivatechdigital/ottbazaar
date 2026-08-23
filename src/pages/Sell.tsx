@@ -88,12 +88,12 @@ export default function Sell() {
 
   return (
     <div>
-      <section className="relative h-64 overflow-hidden">
+      <section className="relative h-52 sm:h-64 overflow-hidden">
         <img src="/images/seller-desk.jpg" alt="" className="w-full h-full object-cover" />
         <div className="absolute inset-0 bg-[#07040d]/70" />
         <div className="absolute inset-0 max-w-3xl mx-auto px-4 flex flex-col justify-end pb-10">
           <p className="text-xs tracking-[0.3em] uppercase text-amber-300/80">Open a stall</p>
-          <h1 className="font-display text-4xl mt-2">List leftover seats</h1>
+          <h1 className="font-display text-3xl sm:text-4xl mt-2">List leftover seats</h1>
         </div>
       </section>
       <form onSubmit={submit} className="max-w-3xl mx-auto px-4 sm:px-6 py-10 space-y-5">
@@ -165,7 +165,7 @@ export default function Sell() {
         </label>
         <div>
           <p className="text-sm mb-2">Cover image</p>
-          <div className="grid grid-cols-3 sm:grid-cols-6 gap-2">
+          <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-2">
             {IMAGES.map((src) => (
               <button type="button" key={src} onClick={() => setForm({ ...form, image_url: src })} className={`rounded-xl overflow-hidden border-2 ${form.image_url === src ? 'border-amber-400' : 'border-transparent'}`}>
                 <img src={src} alt="" className="h-16 w-full object-cover" />
