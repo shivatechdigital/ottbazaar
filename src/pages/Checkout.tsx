@@ -94,10 +94,10 @@ export default function Checkout() {
   }
 
   return (
-    <div className="max-w-5xl mx-auto px-4 sm:px-6 py-10">
+    <div className="max-w-5xl mx-auto px-3 sm:px-6 py-8 sm:py-10">
       <h1 className="font-display text-3xl sm:text-4xl">Kiosk checkout</h1>
-      <form onSubmit={place} className="mt-8 grid lg:grid-cols-[1fr_300px] gap-8">
-        <div className="space-y-4 rounded-3xl border border-white/8 bg-[#14101c] p-6">
+      <form onSubmit={place} className="mt-6 sm:mt-8 grid lg:grid-cols-[1fr_300px] gap-5 sm:gap-8">
+        <div className="space-y-4 rounded-3xl border border-white/8 bg-[#14101c] p-4 sm:p-6">
           {error && <p className="text-rose-300 text-sm">{error}</p>}
           <label className="block text-sm">
             Full name
@@ -146,11 +146,11 @@ export default function Checkout() {
             </div>
           </div>
         </div>
-        <aside className="rounded-3xl border border-white/8 bg-[#14101c] p-6 h-fit">
+        <aside className="rounded-3xl border border-white/8 bg-[#14101c] p-4 sm:p-6 h-fit">
           {items.map((i) => (
-            <div key={i.id} className="flex justify-between text-sm mb-2 text-stone-300">
-              <span className="truncate mr-3">{i.product?.title} × {i.quantity}</span>
-              <span>{formatINR(Number(i.product?.price || 0) * i.quantity)}</span>
+            <div key={i.id} className="flex items-start justify-between gap-3 text-sm mb-2 text-stone-300">
+              <span className="flex-1 min-w-0 break-words">{i.product?.title} × {i.quantity}</span>
+              <span className="shrink-0">{formatINR(Number(i.product?.price || 0) * i.quantity)}</span>
             </div>
           ))}
           <div className="mt-4 pt-4 border-t border-white/8 flex justify-between font-medium">
@@ -159,7 +159,7 @@ export default function Checkout() {
           </div>
           <button
             disabled={submitting}
-            className="mt-6 w-full rounded-full bg-amber-400 text-[#1a1208] py-3 font-semibold disabled:opacity-50"
+            className="mt-6 w-full rounded-full bg-amber-400 text-[#1a1208] py-3 px-4 text-sm sm:text-base leading-tight font-semibold disabled:opacity-50"
           >
             {submitting ? 'Opening WhatsApp...' : `Buy now on WhatsApp ${formatINR(total)}`}
           </button>
