@@ -83,19 +83,19 @@ export default function Cart() {
         <div className="mt-8 grid lg:grid-cols-[1fr_280px] gap-8">
           <div className="space-y-4">
             {items.map((item) => (
-              <div key={item.id} className="rounded-3xl border border-white/8 bg-[#14101c] p-4 flex gap-4">
+              <div key={item.id} className="rounded-3xl border border-white/8 bg-[#14101c] p-4 flex flex-col sm:flex-row gap-4">
                 <img
                   src={item.product?.image_url || '/images/hero-cinema.jpg'}
                   alt=""
-                  className="h-24 w-28 object-cover rounded-2xl"
+                  className="h-40 sm:h-24 w-full sm:w-28 object-cover rounded-2xl shrink-0"
                 />
                 <div className="flex-1 min-w-0">
-                  <h3 className="font-medium truncate">{item.product?.title || 'Unavailable listing'}</h3>
+                  <h3 className="font-medium leading-snug break-words">{item.product?.title || 'Unavailable listing'}</h3>
                   <p className="text-xs text-stone-500 mt-1">
                     {item.product?.platform_name} · {item.product ? durationLabel(item.product.duration_months) : ''}
                   </p>
                   <p className="text-amber-200 mt-2">{formatINR(item.product?.price || 0)}</p>
-                  <div className="mt-3 flex items-center gap-3">
+                  <div className="mt-3 flex flex-wrap items-center gap-3">
                     <div className="inline-flex items-center gap-2 rounded-full border border-white/10 px-2 py-1">
                       <button onClick={() => updateQty(item.id, item.quantity - 1)}><Minus className="h-3.5 w-3.5" /></button>
                       <span className="text-sm w-5 text-center">{item.quantity}</span>
