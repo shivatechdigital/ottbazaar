@@ -15,6 +15,20 @@ const supabase = createClient(supabaseUrl, serviceRoleKey, {
   auth: { autoRefreshToken: false, persistSession: false },
 });
 
+const platformImages = {
+  Spotify: 'https://www.google.com/s2/favicons?domain=spotify.com&sz=256',
+  SonyLIV: 'https://www.google.com/s2/favicons?domain=sonyliv.com&sz=256',
+  JioHotstar: 'https://www.google.com/s2/favicons?domain=hotstar.com&sz=256',
+  ZEE5: 'https://www.google.com/s2/favicons?domain=zee5.com&sz=256',
+  'IPTV 4K': '/images/mobile-stream.jpg',
+  'IPTV Filex': '/images/watch-night.jpg',
+  'IPTV Boss': '/images/hero-bazaar.jpg',
+  Netflix: 'https://www.google.com/s2/favicons?domain=netflix.com&sz=256',
+  'Prime Video': 'https://www.google.com/s2/favicons?domain=primevideo.com&sz=256',
+  Crunchyroll: 'https://www.google.com/s2/favicons?domain=crunchyroll.com&sz=256',
+  'YouTube Premium': 'https://www.google.com/s2/favicons?domain=youtube.com&sz=256',
+};
+
 const catalog = [
   { platform: 'Spotify', color: '#1DB954', category: 'Music', months: 2, price: 79 },
   { platform: 'SonyLIV', color: '#5736A3', category: 'Streaming', months: 1, price: 89 },
@@ -75,7 +89,8 @@ for (const item of catalog) {
 }
 
 for (const item of catalog) {
-  const title = `${item.platform} Premium - ${item.months} ${item.months === 1 ? 'Month' : 'Months'}`;
+  const productName = item.platform.endsWith('Premium') ? item.platform : `${item.platform} Premium`;
+  const title = `${productName} - ${item.months} ${item.months === 1 ? 'Month' : 'Months'}`;
   const product = {
     seller_id: sellerId,
     seller_name: sellerName,
@@ -91,7 +106,7 @@ for (const item of catalog) {
     slots_total: 100,
     description: `${item.platform} Premium access for ${item.months} ${item.months === 1 ? 'month' : 'months'}.`,
     features: JSON.stringify(['Premium access', 'Quick activation']),
-    image_url: '/images/hero-cinema.jpg',
+    image_url: platformImages[item.platform],
     is_active: true,
   };
 
@@ -99,7 +114,8 @@ for (const item of catalog) {
     .from('products')
     .select('id')
     .eq('seller_id', sellerId)
-    .eq('title', title)
+    .eq('platform_name', item.platform)
+    .eq('duration_months', item.months)
     .maybeSingle();
   if (findError) throw findError;
 

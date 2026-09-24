@@ -19,6 +19,7 @@ export default function ProductCard({
   const { toast } = useToast();
   const navigate = useNavigate();
   const off = discountPct(product.price, product.original_price);
+  const isPlatformLogo = product.image_url.includes('/s2/favicons');
 
   const addCart = async (e: React.MouseEvent) => {
     e.preventDefault();
@@ -66,11 +67,16 @@ export default function ProductCard({
       to={`/shop/${product.id}`}
       className="group block rounded-3xl overflow-hidden bg-[#14101c] border border-white/8 hover:border-amber-400/30 transition shadow-lg shadow-black/20"
     >
-      <div className="relative h-44 overflow-hidden">
+      <div
+        className={`relative h-44 overflow-hidden ${isPlatformLogo ? 'flex items-center justify-center' : ''}`}
+        style={isPlatformLogo ? { backgroundColor: `${product.platform_color}20` } : undefined}
+      >
         <img
           src={product.image_url}
           alt={product.title}
-          className="w-full h-full object-cover group-hover:scale-105 transition duration-500"
+          className={isPlatformLogo
+            ? 'h-24 w-24 object-contain drop-shadow-2xl group-hover:scale-105 transition duration-500'
+            : 'w-full h-full object-cover group-hover:scale-105 transition duration-500'}
         />
         <div className="absolute inset-0 bg-gradient-to-t from-[#14101c] via-transparent to-black/20" />
         <span
