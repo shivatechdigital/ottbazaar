@@ -28,10 +28,14 @@ export default function Login() {
     setBusy(true);
     try {
       if (isSignUp) {
-        const { error: err } = await supabase.auth.signUp({ email, password });
+        const { data, error: err } = await supabase.auth.signUp({ email, password });
         if (err) throw err;
-        setInfo('Account created. You can sign in now.');
-        setIsSignUp(false);
+        if (!data.session) {
+          const { error: signInError } = await supabase.auth.signInWithPassword({ email, password });
+          if (signInError) {
+            throw new Error('Account created, but automatic login is disabled. Turn off Confirm email in Supabase Auth settings.');
+          }
+        }
       } else {
         const { error: err } = await supabase.auth.signInWithPassword({ email, password });
         if (err) throw err;
@@ -56,7 +60,6 @@ export default function Login() {
         <div className="w-full max-w-md">
           <p className="text-xs tracking-[0.3em] uppercase text-amber-300/80">Member gate</p>
           <h1 className="font-display text-3xl sm:text-4xl mt-2">{isSignUp ? 'Create a pass' : 'Welcome back'}</h1>
-          <p className="text-sm text-stone-500 mt-3">Demo: demo@ottbazaar.in / password123</p>
           <form onSubmit={handleEmailAuth} className="mt-8 space-y-4">
             {error && <p className="text-rose-300 text-sm">{error}</p>}
             {info && <p className="text-emerald-300 text-sm">{info}</p>}
@@ -80,7 +83,7 @@ export default function Login() {
           </form>
           <div className="my-5 text-center text-stone-500 text-sm">or</div>
           <button
-            onClick={() => signInWithGoogle('OttBazaar')}
+            onClick={signInWithGoogle}
             className="w-full rounded-full border border-white/15 py-3 hover:border-amber-300/40"
           >
             Continue with Google
