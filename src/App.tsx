@@ -31,6 +31,7 @@ export default function App() {
               <Route path="/contact" element={<Contact />} />
               <Route path="/faq" element={<FaqPage />} />
               <Route path="/login" element={<Login />} />
+              <Route path="/admin/login" element={<Login />} />
               <Route path="/cart" element={<ProtectedRoute><Cart /></ProtectedRoute>} />
               <Route path="/wishlist" element={<ProtectedRoute><Wishlist /></ProtectedRoute>} />
               <Route path="/checkout" element={<ProtectedRoute><Checkout /></ProtectedRoute>} />
