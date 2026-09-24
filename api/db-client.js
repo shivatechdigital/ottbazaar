@@ -7,9 +7,14 @@ const supabase = createClient(
   {
     global: {
       fetch: async (url, options) => {
-        const res = await fetch(url, options);
-        if (!res.ok && res.status >= 500) triggerRestore();
-        return res;
+        try {
+          const res = await fetch(url, options);
+          if (!res.ok && res.status >= 500) triggerRestore();
+          return res;
+        } catch (error) {
+          triggerRestore();
+          throw error;
+        }
       },
     },
   }
