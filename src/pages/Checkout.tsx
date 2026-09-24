@@ -56,7 +56,8 @@ export default function Checkout() {
       const lines = items.map((item, idx) => {
         const qty = item.quantity || 1;
         const title = item.product?.title || 'Service';
-        return `${idx + 1}. ${title} x ${qty}`;
+        const lineTotal = Number(item.product?.price || 0) * qty;
+        return `${idx + 1}. ${title} x ${qty} - ${formatINR(lineTotal)}`;
       });
 
       const msg = [
@@ -64,6 +65,8 @@ export default function Checkout() {
         'I like your services will you please provide the below services. Send me the QR will send the money',
         '',
         ...lines,
+        '',
+        `Total: ${formatINR(total)}`,
       ].join('\n');
 
       const whatsappUrl = `https://wa.me/919905711407?text=${encodeURIComponent(msg)}`;
