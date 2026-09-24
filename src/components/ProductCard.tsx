@@ -33,11 +33,14 @@ export default function ProductCard({
         headers: authHeaders(session.access_token),
         body: JSON.stringify({ product_id: product.id, quantity: 1 }),
       });
-      if (!res.ok) throw new Error('Could not add to cart');
+      if (!res.ok) {
+        const body = await res.json().catch(() => null);
+        throw new Error(body?.error || 'Could not add to cart');
+      }
       bumpCart();
       toast('Added to cart');
-    } catch {
-      toast('Could not add to cart', 'error');
+    } catch (error) {
+      toast(error instanceof Error ? error.message : 'Could not add to cart', 'error');
     }
   };
 
