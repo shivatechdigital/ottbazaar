@@ -81,13 +81,6 @@ export default function Login() {
               {busy ? 'Please wait…' : isSignUp ? 'Sign up' : 'Sign in'}
             </button>
           </form>
-          <div className="my-5 text-center text-stone-500 text-sm">or</div>
-          <button
-            onClick={signInWithGoogle}
-            className="w-full rounded-full border border-white/15 py-3 hover:border-amber-300/40"
-          >
-            Continue with Google
-          </button>
           <button onClick={() => setIsSignUp(!isSignUp)} className="mt-6 text-sm text-stone-400 w-full">
             {isSignUp ? 'Already have a pass? Sign in' : 'New to the bazaar? Create a pass'}
           </button>
