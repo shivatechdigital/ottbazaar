@@ -53,7 +53,7 @@ export default function Login() {
         <img src="/images/hero-bazaar.jpg" alt="" className="absolute inset-0 w-full h-full object-cover" />
         <div className="absolute inset-0 bg-[#07040d]/50" />
         <div className="absolute bottom-10 left-10 right-10">
-          <p className="font-display text-3xl xl:text-4xl">Step into the night bazaar.</p>
+          <p className="font-display text-3xl xl:text-4xl">Step into the OTT Bazaar.</p>
         </div>
       </div>
       <div className="flex items-center justify-center px-6 py-16">
